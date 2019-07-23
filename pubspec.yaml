@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   wifi: ^0.1.5
-  flutter_svg: ^0.13.1
+  # flutter_svg: ^0.13.1
   rxdart: ^0.22.0
   swipedetector: ^1.2.0
 
