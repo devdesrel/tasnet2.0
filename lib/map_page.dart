@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tasnet/helpers/custom_bottomsheet.dart';
 import 'bloc/map_bloc.dart';
 import 'models/place.dart';
 import 'package:swipedetector/swipedetector.dart';
-import 'dart:math';
 
 class MapPage extends StatelessWidget {
   final List<Place> testList = [
@@ -121,39 +119,39 @@ class MapPage extends StatelessWidget {
                                   //     : const NeverScrollableScrollPhysics(),
                                   itemCount: testList.length,
                                   itemBuilder: (context, index) => Padding(
-                                        padding: EdgeInsets.only(bottom: 18.0),
-                                        child: ListTile(
-                                          leading: Opacity(
-                                            opacity: 0.2,
-                                            child: Container(
-                                              height: 60.0,
-                                              width: 60.0,
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  color: Color(0xFFFFFFFF)),
-                                            ),
-                                          ),
-                                          title: Text(
-                                            testList[index].name,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 17.0),
-                                          ),
-                                          subtitle: Text(
-                                            testList[index].description,
-                                            style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 12.0),
-                                          ),
-                                          trailing: Text(
-                                            testList[index].distance,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12.0),
-                                          ),
+                                    padding: EdgeInsets.only(bottom: 18.0),
+                                    child: ListTile(
+                                      leading: Opacity(
+                                        opacity: 0.2,
+                                        child: Container(
+                                          height: 60.0,
+                                          width: 60.0,
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color(0xFFFFFFFF)),
                                         ),
                                       ),
+                                      title: Text(
+                                        testList[index].name,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 17.0),
+                                      ),
+                                      subtitle: Text(
+                                        testList[index].description,
+                                        style: TextStyle(
+                                            color: Colors.white54,
+                                            fontSize: 12.0),
+                                      ),
+                                      trailing: Text(
+                                        testList[index].distance,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12.0),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],

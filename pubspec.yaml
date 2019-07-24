@@ -23,6 +23,12 @@ dependencies:
   flutter_svg: ^0.13.1
   rxdart: ^0.22.0
   swipedetector: ^1.2.0
+  # google_maps_flutter: ^0.5.19+2
+  # flutter_map: ^0.6.1+2
+  # latlong: ^0.6.1
+  mapbox_gl: ^0.0.3
+
+
 
 
 
