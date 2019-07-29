@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wifi/wifi.dart';
 
-import 'custom_sliver.dart';
-import 'map_page.dart';
+import 'custom_map_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,8 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.red, fontFamily: "Montserrat"),
-      home: CustomSliver(),
+      theme: ThemeData(
+          // primarySwatch: Colors.red,
+          fontFamily: "Montserrat"),
+      home: CustomMapPage(),
     );
   }
 }

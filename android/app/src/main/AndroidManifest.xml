@@ -10,6 +10,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="tasnet"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.mapbox.token" android:value="pk.eyJ1IjoiZHVyZG9uYSIsImEiOiJjandxNWczeWExcjZhNDRvbHN3OWRyZmZlIn0.L5SyC1cmp40yPvvWkgSnuA" />
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -21,7 +23,6 @@
                  until Flutter renders its first frame. It can be removed if
                  there is no splash screen (such as the default splash screen
                  defined in @style/LaunchTheme). -->
-            <meta-data android:name="com.mapbox.token" android:value="pk.eyJ1IjoiZHVyZG9uYSIsImEiOiJjandxNWczeWExcjZhNDRvbHN3OWRyZmZlIn0.L5SyC1cmp40yPvvWkgSnuA" />
             <meta-data
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
                 android:value="true" />

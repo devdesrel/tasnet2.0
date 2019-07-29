@@ -1,28 +1,42 @@
 import 'dart:async';
 
+import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:tasnet/models/place.dart';
 
 class MapBloc {
   MapBloc() {
-    _isBottomSheetDraggedUpController.stream.listen((val) {
-      isBottomSheetDraggedUpStreamSubject.add(val);
+    _setBottomSheetExpandedController.stream.listen((val) {
+      _isBottomSheetExpandedSubject.add(val);
+    });
+    _getSelectedPlaceController.stream.listen((val) {
+      _mapCenterLatLngSubject.add(val.latlng);
     });
   }
 
   ///Sinks
-  Sink<bool> get isBottomSheetDraggedUp =>
-      _isBottomSheetDraggedUpController.sink;
+  Sink<Place> get getSelectedPlace => _getSelectedPlaceController.sink;
 
-  final _isBottomSheetDraggedUpController = StreamController<bool>();
+  final _getSelectedPlaceController = StreamController<Place>();
+
+  Sink<bool> get setBottomSheetExpanded =>
+      _setBottomSheetExpandedController.sink;
+
+  final _setBottomSheetExpandedController = StreamController<bool>();
 
   ///Streams
-  Stream<bool> get isBottomSheetDraggedUpStream =>
-      isBottomSheetDraggedUpStreamSubject.stream;
+  Stream<LatLng> get mapCenterLatLng => _mapCenterLatLngSubject.stream;
 
-  final isBottomSheetDraggedUpStreamSubject = BehaviorSubject<bool>();
+  final _mapCenterLatLngSubject = BehaviorSubject<LatLng>();
+  Stream<bool> get isBottomSheetExpanded =>
+      _isBottomSheetExpandedSubject.stream;
+
+  final _isBottomSheetExpandedSubject = BehaviorSubject<bool>();
 
   dispose() {
-    isBottomSheetDraggedUpStreamSubject.close();
-    _isBottomSheetDraggedUpController.close();
+    _getSelectedPlaceController.close();
+    _mapCenterLatLngSubject.close();
+    _isBottomSheetExpandedSubject.close();
+    _setBottomSheetExpandedController.close();
   }
 }
