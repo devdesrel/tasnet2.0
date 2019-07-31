@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tasnet/custom_map_page.dart';
 import 'package:wifi/wifi.dart';
 
-import 'custom_map_page.dart';
+import 'authorization_page.dart';
 
 void main() => runApp(MyApp());
 

@@ -18,6 +18,8 @@ class CustomMapPage extends StatefulWidget {
 //   }
 
 class _CustomMapPageState extends State<CustomMapPage> {
+  var _bloc = MapBloc();
+
   MapboxMapController _controller;
   Position currentLocation;
   Future<Position> getCurrentLocation() async {
@@ -49,12 +51,12 @@ class _CustomMapPageState extends State<CustomMapPage> {
   @override
   void dispose() {
     _controller.dispose();
+    _bloc.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    var _bloc = MapBloc();
     double screenHeight = MediaQuery.of(context).size.height;
     final List<Place> testList = [
       Place(

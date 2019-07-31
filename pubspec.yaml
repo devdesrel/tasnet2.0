@@ -23,11 +23,11 @@ dependencies:
   # flutter_svg: ^0.13.1
   rxdart: ^0.22.0
   geolocator: ^5.1.1+1
-  # swipedetector: ^1.2.0
-  # google_maps_flutter: ^0.5.19+2
-  # flutter_map: ^0.6.1+2
-  # latlong: ^0.6.1
+  http: ^0.12.0
+  html: ^0.13.3+3
   mapbox_gl: ^0.0.3
+  shared_preferences: ^0.5.3+4
+  dio: ^2.1.13
 
 
 
